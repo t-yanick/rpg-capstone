@@ -1,6 +1,9 @@
-import 'phaser';
+import Phaser from 'phaser';
 
-export default {
+import PreloadScene from './scenes/PreloadScene'
+import Game from './scenes/Game'
+
+export default new Phaser.Game({
     type: Phaser.AUTO,
     parent: 'phaser-example',
     width: 800,
@@ -8,7 +11,8 @@ export default {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 200 }
+            gravity: { y: 0 }
         },
     },
-};
+    scene: [PreloadScene, Game]
+})

@@ -1,11 +1,14 @@
 import Phaser from 'phaser';
+import dungeon from '../../Public/tiles/dungeon-tiles.png'
+import dungeonjson from '../../Public/tiles/dungeon-tilemap.json'
+
 export default class PreloadScene extends Phaser.Scene {
     constructor() {
-        super('preload-scene');
+        super('PreloadScene');
     }
     preload() {
-        this.load.image('tiles', 'assets/tiles/dungeon-tiles.png');
-        this.load.tilemapTiledJSON('dungeon', 'assets/dungeon-titlemap.json');
+        this.load.image('tiles', dungeon);
+        this.load.tilemapTiledJSON('dungeon', dungeonjson);
         // this.load.atlas('faune', 'character/fauna.png', 'character/fauna.json');
         // this.load.atlas('lizard', 'enemies/lizard.png', 'enemies/lizard.json');
         // this.load.atlas('treasure', 'items/treasure.png', 'items/treasure.json');
@@ -14,6 +17,6 @@ export default class PreloadScene extends Phaser.Scene {
         // this.load.image('knife', 'weapons/weapon_knife.png');
     }
     create() {
-        this.scene.start('game');
+        this.scene.start('Game');
     }
 }

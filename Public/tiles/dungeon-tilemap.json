@@ -1,4 +1,12 @@
 { "compressionlevel":-1,
+ "editorsettings":
+    {
+     "export":
+        {
+         "format":"json",
+         "target":"..\/dungeon-tilemap.json"
+        }
+    },
  "height":100,
  "infinite":false,
  "layers":[
@@ -36,7 +44,7 @@
         {
          "columns":32,
          "firstgid":1,
-         "image":"tiles\/dungeon-tiles.png",
+         "image":"dungeon-tiles.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,

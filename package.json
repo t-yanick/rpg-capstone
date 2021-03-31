@@ -20,6 +20,7 @@
     "url": "https://github.com/t-yanick/rpg-capstone/issues"
   },
   "homepage": "https://github.com/t-yanick/rpg-capstone#readme",
+  "main": "index.js",
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
@@ -35,6 +36,7 @@
   },
   "dependencies": {
     "babel-loader": "^8.2.2",
+    "bootstrap": "^4.6.0",
     "css-loader": "^5.2.0",
     "file-loader": "^6.2.0",
     "phaser": "^3.53.1",

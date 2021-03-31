@@ -1,31 +1,62 @@
+// import Phaser from 'phaser';
+// import BootScene from './scenes/BootScene'
+
+// // Scenes
+// const scenes = [
+//     BootScene
+// ];
+
+// const config = {
+//     type: Phaser.AUTO,
+//     parent: 'phaser-app',
+//     title: 'Dungeon Crawler',
+//     url: '',
+//     width: 800,
+//     height: 600,
+
+//     dom: {
+//         createContainer: true,
+//     },
+//     physics: {
+//         default: 'arcade',
+//         arcade: {
+//             gravity: { y: 0 },
+//             debug: false,
+//         },
+//     },
+//     scene: scenes,
+//     pixelArt: true,
+//     backgroundColor: 0x333333,
+// };
+
+// export default config;
+
 import Phaser from 'phaser';
 
-// Scenes
-const scenes = [
-    BootScene
-];
 
-const config = {
+export default {
     type: Phaser.AUTO,
     parent: 'phaser-app',
-    title: 'Dungeon Crawler',
-    url: '',
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 720,
 
-    dom: {
-        createContainer: true,
+    scale: {
+        mode: Phaser.DOM.ENVELOP,
+        autoCenter: Phaser.DOM.CENTER_BOTH,
+        parent: 'phaser-app',
+        dom: {
+            createContainer: true,
+        },
+        min: {
+            width: 800,
+            height: 600,
+        },
+        max: {
+            width: 1024,
+            height: 720,
+        },
     },
     physics: {
         default: 'arcade',
-        arcade: {
-            gravity: { y: 0 },
-            debug: false,
-        },
     },
-    scene: scenes,
-    pixelArt: true,
-    backgroundColor: 0x333333,
 };
-
-export default config;

@@ -4,7 +4,7 @@ const path = require('path');
 
 const webpack = require('webpack');
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -60,16 +60,15 @@ module.exports = {
 
         }),
 
-        new CopyWebpackPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, 'src', 'assets', '**', '*'),
-                    to: path.resolve(__dirname, 'dist'),
-                    noErrorOnMissing: true
-                },
-            ],
+        // new CopyWebpackPlugin({
+        //     patterns: [
+        //         {
+        //             from: path.resolve(__dirname, 'src', 'assets'),
+        //             to: path.resolve(__dirname, 'dist'),
+        //         },
+        //     ],
 
-        }),
+        // }),
 
         new webpack.DefinePlugin({
 

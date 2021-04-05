@@ -14,7 +14,7 @@
  * @property {(Phaser.Scene|Phaser.Scene[]|Phaser.Types.Scenes.SettingsConfig|Phaser.Types.Scenes.SettingsConfig[]|Phaser.Types.Scenes.CreateSceneFromObjectConfig|Phaser.Types.Scenes.CreateSceneFromObjectConfig[]|function|function[])} [scene=null] - A scene or scenes to add to the game. If several are given, the first is started; the remainder are started only if they have `{ active: true }`. See the `sceneConfig` argument in `Phaser.Scenes.SceneManager#add`.
  * @property {string[]} [seed] - Seed for the random number generator.
  * @property {string} [title=''] - The title of the game. Shown in the browser console.
- * @property {string} [url='http://phaser.io'] - The URL of the game. Shown in the browser console.
+ * @property {string} [url='https://phaser.io'] - The URL of the game. Shown in the browser console.
  * @property {string} [version=''] - The version of the game. Shown in the browser console.
  * @property {boolean} [autoFocus=true] - Automatically call window.focus() when the game boots. Usually necessary to capture input events if the game is in a separate frame.
  * @property {(boolean|Phaser.Types.Core.InputConfig)} [input] - Input configuration, or `false` to disable all game input.
@@ -31,6 +31,7 @@
  * @property {Phaser.Types.Core.ScaleConfig} [scale] - The Scale Manager configuration.
  * @property {Phaser.Types.Core.AudioConfig} [audio] - The Audio Configuration object.
  * @property {Phaser.Types.Core.PipelineConfig} [pipeline] - A WebGL Pipeline configuration object. Can also be part of the `RenderConfig`.
+ * @property {(string|number)} [backgroundColor=0x000000] - The background color of the game canvas. The default is black.
  * @property {boolean} [antialias=true] - When set to `true`, WebGL uses linear interpolation to draw scaled or rotated textures, giving a smooth appearance. When set to `false`, WebGL uses nearest-neighbor interpolation, giving a crisper appearance. `false` also disables antialiasing of the game canvas itself, if the browser supports it, when the game canvas is scaled.
  * @property {boolean} [antialiasGL=true] - Sets the `antialias` property when the WebGL context is created. Setting this value does not impact any subsequent textures that are created, or the canvas style attributes.
  * @property {boolean} [desynchronized=false] - When set to `true` it will create a desynchronized context for both 2D and WebGL. See https://developers.google.com/web/updates/2019/05/desynchronized for details.

@@ -19,10 +19,10 @@
 //     },
 //     physics: {
 //         default: 'arcade',
-//         arcade: {
-//             gravity: { y: 0 },
-//             debug: false,
-//         },
+//          arcade: {
+//     gravity: { y: 0 },
+//     debug: false,
+// },
 //     },
 //     scene: scenes,
 //     pixelArt: true,
@@ -31,32 +31,39 @@
 
 // export default config;
 
-import Phaser from 'phaser';
+// import Phaser from 'phaser';
 
 
-export default {
-    type: Phaser.AUTO,
-    parent: 'phaser-app',
-    width: 1024,
-    height: 720,
+// export default {
+//     type: Phaser.AUTO,
+//     parent: 'phaser-app',
+//     width: 800,
+//     height: 600,
 
-    scale: {
-        mode: Phaser.DOM.ENVELOP,
-        autoCenter: Phaser.DOM.CENTER_BOTH,
-        parent: 'phaser-app',
-        dom: {
-            createContainer: true,
-        },
-        min: {
-            width: 800,
-            height: 600,
-        },
-        max: {
-            width: 1024,
-            height: 720,
-        },
-    },
-    physics: {
-        default: 'arcade',
-    },
-};
+//     scale: {
+//         mode: Phaser.DOM.ENVELOP,
+//         autoCenter: Phaser.DOM.CENTER_BOTH,
+//         parent: 'phaser-app',
+//         dom: {
+//             createContainer: true,
+//         },
+//         min: {
+//             width: 800,
+//             height: 600,
+//         },
+//         max: {
+//             // width: 1024,
+//             // height: 720,
+//             width: 800,
+//             height: 600,
+//         },
+//     },
+//     physics: {
+//         default: 'arcade',
+//         arcade: {
+//             gravity: { y: 0 },
+//             debug: false,
+//         },
+//     },
+//     // scene: scenes,
+// };

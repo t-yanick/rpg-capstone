@@ -2,7 +2,6 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Maksim Nazarjev @acupofspirt
 */
-
 "use strict";
 
 const WebpackError = require("./WebpackError");

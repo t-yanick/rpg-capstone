@@ -1,6 +1,4 @@
 import Phaser from 'phaser';
-import logo1 from '../../assets/images/logo.png';
-import forest from '../../assets/images/forest.png';
 
 // SCENE THAT LOADS ALL ASSETS OF THE GAME
 class PreloaderScene extends Phaser.Scene {
@@ -9,18 +7,14 @@ class PreloaderScene extends Phaser.Scene {
     }
 
     init() {
-
     }
 
     preload() {
-        this.load.image('title', logo1);
-        this.load.image('background', forest);
+        this.add.image(400, 200, 'logo');
+    }
 
-        // MAP TILES
-        this.load.image('tiles', tiles);
-
-        // MAP IN JSON FORMAT
-        this.load.tilemapTiledJSON('map', mapJson);
+    create() {
+        // let bg = this.add.image(0, 0, 'title');
     }
 }
 

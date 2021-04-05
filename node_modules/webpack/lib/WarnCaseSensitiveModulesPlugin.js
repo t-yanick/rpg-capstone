@@ -2,19 +2,11 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-
 "use strict";
 
 const CaseSensitiveModulesWarning = require("./CaseSensitiveModulesWarning");
 
-/** @typedef {import("./Compiler")} Compiler */
-
 class WarnCaseSensitiveModulesPlugin {
-	/**
-	 * Apply the plugin
-	 * @param {Compiler} compiler the compiler instance
-	 * @returns {void}
-	 */
 	apply(compiler) {
 		compiler.hooks.compilation.tap(
 			"WarnCaseSensitiveModulesPlugin",
@@ -33,9 +25,7 @@ class WarnCaseSensitiveModulesPlugin {
 					for (const pair of moduleWithoutCase) {
 						const array = pair[1];
 						if (array.length > 1) {
-							compilation.warnings.push(
-								new CaseSensitiveModulesWarning(array, compilation.moduleGraph)
-							);
+							compilation.warnings.push(new CaseSensitiveModulesWarning(array));
 						}
 					}
 				});

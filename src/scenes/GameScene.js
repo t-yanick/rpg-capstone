@@ -1,16 +1,71 @@
 import Phaser from 'phaser';
 
+import Map from '../Classes/Map';
+
 class GameScene extends Phaser.Scene {
     constructor() {
         super('Game');
     }
 
-    create() {
-        this.map = this.make.tilemap({ key: 'map' });
-        this.tiles = this.map.addTilesetImage('forest_tileset-32x32', tiles);
-        // forest_tileset-32x32
+    init() {
+        this.scene.launch('Ui');
+    }
 
-        this.grass = this.map.createStaticLayer('Grass', this.tiles, 0, 0)
+    create() {
+        this.createMap();
+        this.createAudio();
+        this.createGroups();
+        this.createInput();
+        this.createGameManager();
+
+    }
+
+    update() {
+
+    }
+
+    createAudio() {
+
+    }
+
+    createPlayer() {
+
+    }
+
+    createGroups() {
+
+    }
+
+    spawnChest() {
+
+    }
+
+    spawnMonster() {
+
+    }
+
+    createInput() {
+
+    }
+
+    addCollisions() {
+
+    }
+
+    enemyOverlap() {
+
+    }
+
+    collectChest() {
+
+    }
+
+    createMap() {
+        this.map = new Map(this, 'map', 'background', 'blocked');
+    }
+
+    createGameManager() {
+
     }
 }
 

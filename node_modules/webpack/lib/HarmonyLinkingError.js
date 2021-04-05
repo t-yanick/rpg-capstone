@@ -1,7 +1,6 @@
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 */
-
 "use strict";
 
 const WebpackError = require("./WebpackError");

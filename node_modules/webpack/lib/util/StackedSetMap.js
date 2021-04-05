@@ -2,67 +2,28 @@
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
 */
-
 "use strict";
 
-const TOMBSTONE = Symbol("tombstone");
-const UNDEFINED_MARKER = Symbol("undefined");
+const util = require("util");
 
-/**
- * @template T
- * @typedef {T | undefined} Cell<T>
- */
+const TOMBSTONE = {};
+const UNDEFINED_MARKER = {};
 
-/**
- * @template T
- * @typedef {T | typeof TOMBSTONE | typeof UNDEFINED_MARKER} InternalCell<T>
- */
-
-/**
- * @template K
- * @template V
- * @param {[K, InternalCell<V>]} pair the internal cell
- * @returns {[K, Cell<V>]} its “safe” representation
- */
-const extractPair = pair => {
-	const key = pair[0];
-	const val = pair[1];
-	if (val === UNDEFINED_MARKER || val === TOMBSTONE) {
-		return [key, undefined];
-	} else {
-		return /** @type {[K, Cell<V>]} */ (pair);
-	}
-};
-
-/**
- * @template K
- * @template V
- */
-class StackedMap {
-	/**
-	 * @param {Map<K, InternalCell<V>>[]=} parentStack an optional parent
-	 */
+class StackedSetMap {
 	constructor(parentStack) {
-		/** @type {Map<K, InternalCell<V>>} */
-		this.map = new Map();
-		/** @type {Map<K, InternalCell<V>>[]} */
 		this.stack = parentStack === undefined ? [] : parentStack.slice();
+		this.map = new Map();
 		this.stack.push(this.map);
 	}
 
-	/**
-	 * @param {K} item the key of the element to add
-	 * @param {V} value the value of the element to add
-	 * @returns {void}
-	 */
+	add(item) {
+		this.map.set(item, true);
+	}
+
 	set(item, value) {
 		this.map.set(item, value === undefined ? UNDEFINED_MARKER : value);
 	}
 
-	/**
-	 * @param {K} item the item to delete
-	 * @returns {void}
-	 */
 	delete(item) {
 		if (this.stack.length > 1) {
 			this.map.set(item, TOMBSTONE);
@@ -71,17 +32,11 @@ class StackedMap {
 		}
 	}
 
-	/**
-	 * @param {K} item the item to test
-	 * @returns {boolean} true if the item exists in this set
-	 */
 	has(item) {
 		const topValue = this.map.get(item);
-		if (topValue !== undefined) {
-			return topValue !== TOMBSTONE;
-		}
+		if (topValue !== undefined) return topValue !== TOMBSTONE;
 		if (this.stack.length > 1) {
-			for (let i = this.stack.length - 2; i >= 0; i--) {
+			for (var i = this.stack.length - 2; i >= 0; i--) {
 				const value = this.stack[i].get(item);
 				if (value !== undefined) {
 					this.map.set(item, value);
@@ -93,10 +48,6 @@ class StackedMap {
 		return false;
 	}
 
-	/**
-	 * @param {K} item the key of the element to return
-	 * @returns {Cell<V>} the value of the element
-	 */
 	get(item) {
 		const topValue = this.map.get(item);
 		if (topValue !== undefined) {
@@ -105,7 +56,7 @@ class StackedMap {
 				: topValue;
 		}
 		if (this.stack.length > 1) {
-			for (let i = this.stack.length - 2; i >= 0; i--) {
+			for (var i = this.stack.length - 2; i >= 0; i--) {
 				const value = this.stack[i].get(item);
 				if (value !== undefined) {
 					this.map.set(item, value);
@@ -136,17 +87,20 @@ class StackedMap {
 
 	asArray() {
 		this._compress();
-		return Array.from(this.map.keys());
+		return Array.from(this.map.entries(), pair => pair[0]);
 	}
 
 	asSet() {
-		this._compress();
-		return new Set(this.map.keys());
+		return new Set(this.asArray());
 	}
 
 	asPairArray() {
 		this._compress();
-		return Array.from(this.map.entries(), extractPair);
+		return Array.from(this.map.entries(), pair =>
+			/** @type {[TODO, TODO]} */ (pair[1] === UNDEFINED_MARKER
+				? [pair[0], undefined]
+				: pair)
+		);
 	}
 
 	asMap() {
@@ -159,8 +113,30 @@ class StackedMap {
 	}
 
 	createChild() {
-		return new StackedMap(this.stack);
+		return new StackedSetMap(this.stack);
+	}
+
+	get length() {
+		throw new Error("This is no longer an Array");
+	}
+
+	set length(value) {
+		throw new Error("This is no longer an Array");
 	}
 }
 
-module.exports = StackedMap;
+// TODO remove in webpack 5
+StackedSetMap.prototype.push = util.deprecate(
+	/**
+	 * @deprecated
+	 * @this {StackedSetMap}
+	 * @param {any} item Item to add
+	 * @returns {void}
+	 */
+	function(item) {
+		this.add(item);
+	},
+	"This is no longer an Array: Use add instead."
+);
+
+module.exports = StackedSetMap;

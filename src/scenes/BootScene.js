@@ -23,7 +23,8 @@ class BootScene extends Phaser.Scene {
     }
 
     loadSpriteSheets() {
-
+        this.load.spritesheet('items', 'assets/images/items.png', { frameWidth: 32, frameHeight: 32 });
+        this.load.spritesheet('characters', 'assets/images/characters.png', { frameWidth: 32, frameHeight: 32 });
     }
 
     loadAudio() {

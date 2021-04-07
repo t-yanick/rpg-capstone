@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-
+// import Chest from '../Classes/Chest';
 import Map from '../Classes/Map';
 
 class GameScene extends Phaser.Scene {

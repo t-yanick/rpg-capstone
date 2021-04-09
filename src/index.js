@@ -31,7 +31,7 @@ class Game extends Phaser.Game {
 
 // export default Game;
 
-console.log('Hello World');
+// console.log('Hello World');
 
 window.game = new Game();
 

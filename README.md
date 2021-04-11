@@ -1,185 +1,134 @@
-# rpg-capstone
+<p align="center">
+     <a href="https://github.com/t-yanick/rpg-capstone">
+    <img src="assets/readme/microverse.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">JavaScript / Capstone --> [Main Warrior]</h3>
+
+  <p align="center">
+    This project is the Capstone of the Microverse curriculum at the end of the JavaScript module!
+    <br />
+    <a href="https://github.com/t-yanick/rpg-capstone"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/t-yanick/rpg-capstone/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/t-yanick/rpg-capstone/issues">Request Feature</a>
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+  * [Walkthrough Video and Deployment (GitHub-Pages)](#walkthrough-video-and-deployment-(gitHub-pages))
+* [Usage](#usage)
+* [Contributors](#contributors)
+* [Acknowledgements](#acknowledgements)
+* [License](#license)
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+This project is the last project in the JavaScript Module of the Microverse Technical Curriculum. It proves that the module has been completed.
+
+This project is based on a turn-based RPG game and the main action is based on collecting chests and attacking and killing monsters.
+
+### How to Play
+
+### Design Process
+
+### Built With
+This project was built using the technologies below.
+* JavaScript
+* Phaser3
+* Webpack
+* Jest Tests
+* Tiled Map
+
+<!-- Live Demo -->
+## Walkthrough Video and Deployment (GitHub-Pages)
+loom video link here
+##
+* Live Demo Link --> App Deployed with GitHub-Pages: [Main Warrior]() :point_left:
+
+## Screenshots
+![screenshot-1](assets/readme/)
+![screenshot-2](assets/readme/)
+![screenshot-3](assets/readme/)
+
+### Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+ * [Node.js](https://nodejs.org/) is required to install dependencies and run scripts via npm.
+ * A modern browser
+
+### Clone
+* [download](https://github.com/t-yanick/rpg-capstone/archive/refs/heads/development.zip) or clone this repo:
+  - Clone with SSH:
+  ```
+    git@github.com:t-yanick/rpg-capstone.git
+  ```
+  - Clone with HTTPS
+  ```
+    https://github.com/t-yanick/rpg-capstone.git
+
+### Setup
+
+Install dependencies:
+
+```
+$ npm install
+```
+
+Start the local webserver:
+
+```$ npm start``` > will open a local webserver at http://localhost:8080/ directly in your default browser with the game ready to be played
+
+  ## Automated Test
+
+* Run the command and see the output:
+```$ npm run test```
+
+
+ ## Potential future features
+- Extend the game to a multiplayer online game
+- Add authentication process
+
+## Contributors
+
+👤 **Tazoh Yanick Tazoh**
+
+- LinkedIn: [Tazoh Yanick Tazoh](https://www.linkedin.com/in/tazoh-yanick-tazoh/)
+- GitHub: [@t-yanick](https://github.com/t-yanick)
+- Twitter: [@ElTazoh](https://twitter.com/ElTazoh)
+
+## Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/t-yanick/rpg-capstone/issues).
+
+
+## Show your support
+
+Give a :star: if you like this project!
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+* [SFX effects](https://opengameart.org/) - OpenGameArt website
+* [Phaser3](https://phaser.io/phaser3) 
+* [Microverse](https://www.microverse.org/)
+
+## 📝 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
 
 
 
-// const path = require('path');
-
-// const webpack = require('webpack');
-
-// // const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-
-
-
-
-// module.exports = {
-
-//     mode: 'development',
-//     entry: {
-//         app: './src/index.js',
-//         'production-dependencies': ['phaser'],
-//     },
-
-//     output: {
-//         path: path.resolve(__dirname, 'dist'),
-//         filename: '[name].js',
-//     },
-
-//     devtool: 'inline-source-map',
-
-//     devServer: {
-//         contentBase: path.join(__dirname, 'dist'),
-//         compress: true,
-//         port: 9000,
-//     },
-
-//     plugins: [
-//         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-//         new HtmlWebpackPlugin({
-
-//             title: 'Development',
-//             template: './index.html',
-//         }),
-
-//         // new CopyWebpackPlugin({
-//         //     patterns: [
-//         //         {
-//         //             from: path.resolve(__dirname, 'src', 'assets'),
-//         //             to: path.resolve(__dirname, 'dist'),
-//         //         },
-//         //     ],
-
-//         // }),
-
-//         new webpack.DefinePlugin({
-//             'typeof CANVAS_RENDERER': JSON.stringify(true),
-//             'typeof WEBGL_RENDERER': JSON.stringify(true),
-//         }),
-//     ],
-
-//     module: {
-//         rules: [
-//             {
-//                 test: /\.s?css$/,
-//                 use: [
-//                     'style-loader',
-//                     'css-loader',
-//                     'resolve-url-loader',
-//                     'postcss-loader',
-//                     'sass-loader',
-//                 ],
-//             },
-//             {
-//                 test: /\.js$|jsx/,
-//                 include: path.resolve(__dirname, 'src/'),
-//                 use: {
-//                     loader: 'babel-loader',
-//                     options: {
-//                         presets: ['@babel/preset-env'],
-//                     },
-//                 },
-//             },
-
-//             {
-//                 test: /\.(png|svg|jpe?g|gif)$/,
-//                 use: [
-//                     'file-loader',
-//                     {
-//                         loader: 'image-webpack-loader',
-//                         options: {
-//                             mozjpeg: {
-//                                 progressive: true,
-//                             },
-
-//                             optipng: {
-//                                 enabled: true,
-//                             },
-
-//                             pngquant: {
-//                                 quality: [0.65, 0.90],
-//                                 speed: 4,
-//                             },
-
-//                             gifsicle: {
-//                                 interlaced: false,
-//                             },
-//                             webp: {
-//                                 quality: 75,
-//                             },
-//                         },
-//                     },
-//                 ],
-//             },
-
-//             {
-//                 test: [/\.vert$/, /\.frag$/],
-//                 use: 'raw-loader',
-//             },
-
-//             {
-//                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-//                 use: [
-//                     'file-loader',
-//                 ],
-//             },
-//         ],
-//     },
-
-//     resolve: {
-//         extensions: ['.js', '.jsx', '.jsx.html'],
-//         modules: [
-//             path.join(__dirname, 'node_modules'),
-//         ],
-//     },
-
-// };
-
-
-
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-module.exports = {
-    mode: 'development',
-    // entry: {
-    //     app: './src/index.js'
-    // },
-    devtool: 'eval-source-map',
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                },
-            },
-            {
-                test: [/\.vert$/, /\.frag$/],
-                use: 'raw-loader',
-            },
-            {
-                test: /\.(gif|png|jpe?g|svg|xml|wav)$/i,
-                use: 'file-loader',
-            },
-        ],
-    },
-    plugins: [
-        new CleanWebpackPlugin({
-            root: path.resolve(__dirname, '../'),
-        }),
-        new webpack.DefinePlugin({
-            CANVAS_RENDERER: JSON.stringify(true),
-            WEBGL_RENDERER: JSON.stringify(true),
-        }),
-        new HtmlWebpackPlugin({
-            template: './index.html',
-        }),
-    ],
-};

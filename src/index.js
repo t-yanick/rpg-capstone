@@ -7,6 +7,7 @@ import TitleScene from './Scenes/TitleScene';
 import OptionsScene from './Scenes/OptionsScene';
 import CreditsScene from './Scenes/CreditsScene';
 import GuideScene from './Scenes/GuideScene';
+import GameOver from './Scenes/GameOverScene';
 import Model from './Classes/Model';
 import ScoreScene from './Scenes/ScoreScene';
 import config from './Config/config';
@@ -22,19 +23,13 @@ class Game extends Phaser.Game {
         this.scene.add('Guide', GuideScene);
         this.scene.add('Game', GameScene);
         this.scene.add('Ui', UiScene);
+        this.scene.add('GameOver', GameOver);
         this.scene.add('Score', ScoreScene);
         this.scene.start('Boot');
 
         const model = new Model();
         this.globals = { model, bgMusic: null }
-
     }
 }
 
-// export default Game;
-
-// console.log('Hello World');
-
 window.game = new Game();
-
-// window.game.soundOn = true;

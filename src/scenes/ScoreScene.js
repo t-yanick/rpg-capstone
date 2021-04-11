@@ -10,13 +10,13 @@ export default class DisplayScoreScene extends Phaser.Scene {
     create() {
         this.add.text(400, 100, 'Leader Board', {
             color: 'white',
-            fontSize: '32px',
+            fontSize: '32px ',
         }).setOrigin(0.5, 0.5);
 
         getScores().then((scores) => {
             const scoreStyle = {
                 color: 'white',
-                fontSize: '38px',
+                fontSize: '38px ',
             };
 
             scores.sort((x, y) => y.score - x.score);

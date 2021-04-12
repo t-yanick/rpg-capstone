@@ -1,3 +1,5 @@
+/* eslint-disable radix */
+
 import Phaser from 'phaser';
 
 class PreloaderScene extends Phaser.Scene {

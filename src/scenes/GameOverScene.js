@@ -15,7 +15,7 @@ export default class GameOverScene extends Phaser.Scene {
 
   preload() {
     this.load.image('gameOverTitle', 'assets/ui/blue_button02.png');
-    this.load.image('sprImg', 'assets/sci1');
+    this.load.image('sprImg', 'assets/sci1.png');
   }
 
   create() {
@@ -25,7 +25,7 @@ export default class GameOverScene extends Phaser.Scene {
 
     this.score = this.add.text(230, 30,
       `Hello ${user}, your score is: ${this.sys.game.globals.model.score}`, {
-        fontFamily: 'monosoace',
+        fontFamily: 'monospace',
         fontSize: 20,
         fontStyle: 'bold',
         color: '#ffffff',

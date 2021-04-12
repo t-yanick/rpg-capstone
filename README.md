@@ -37,7 +37,19 @@ This project is based on a turn-based RPG game and the main action is based on c
 
 ### How to Play
 
+![screenshot](assets/readme/controls.png)
+
+The game can be played using the arrow keys for moving the player and the spacebar for attacking the monster.
+By moving the player you will be able to collect chests that contain gold. Each chest will update the score with a random amount between 20 and 30 golds.
+
+Each character has a health bar. The monster's health bar will decrease each time the player will attack, but watch out, the monsters have a random movement and each time you will attack they will fight back making your health bar decrease.
+As a bonus though, for each monster killed the player will have back some gold and some life to increase his health bar.
+
 ### Design Process
+
+Main Warrior was designed on an initial, quite complex, webpack configuration specific for Phaser3. This allowed me to investigate Phaser and its tools from a specific perspective. The entire map was built with Tiled on a 32 x 32 collection of squares. The map then has been exported as a json file and used for placing chests, and monsters at random positions.
+
+The player has a set velocity and can move across the map by using the arrow keys. Each time the player dies it will be spawned at a different random position to make the game more interesting. The monsters and the chests will be as well randomly generated and spawned on the map. Each spawned element has a random unique id used to interact with the user. The unique id is generated with the help of uuid npm package.
 
 ### Built With
 This project was built using the technologies below.
@@ -48,15 +60,14 @@ This project was built using the technologies below.
 * Tiled Map
 
 <!-- Live Demo -->
-## Walkthrough Video and Deployment (GitHub-Pages)
-loom video link here
+## Deployment (GitHub-Pages)
 ##
-* Live Demo Link --> App Deployed with GitHub-Pages: [Main Warrior]() :point_left:
+* Live Demo Link --> App Deployed with GitHub-Pages: [Main Warrior]()
 
 ## Screenshots
-![screenshot-1](assets/readme/)
-![screenshot-2](assets/readme/)
-![screenshot-3](assets/readme/)
+![screenshot-1](assets/readme/screenshot1.png)
+![screenshot-2](assets/readme/screenshot2.png)
+![screenshot-3](assets/readme/screenshot3.png)
 
 ### Getting Started
 

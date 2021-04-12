@@ -21,12 +21,12 @@ describe('Player', () => {
         expect(player.scene).toBe('GameScene');
     });
 
-    it('Should return an error if player\'s assinged scene doesn\'t match', () => {
+    it('Should return an error if player\'s assigned scene doesn\'t match', () => {
         player.scene = 'GameScene';
         expect(player.scene).not.toBe('GameOver');
     });
 
-    it('Player\'s velocity should be an interger value', () => {
+    it('Player\'s velocity should be an integer value', () => {
         player.velocity = 100;
         expect(Number.isInteger(player.velocity)).toBe(true);
     });

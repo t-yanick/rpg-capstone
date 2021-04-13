@@ -35,6 +35,10 @@ This project is the last project in the JavaScript Module of the Microverse Tech
 
 This project is based on a turn-based RPG game and the main action is based on collecting chests and attacking and killing monsters.
 
+## Game Design Documentation
+
+[Main Warrior in the Jungle](https://docs.google.com/document/d/18Rd4LGHM5H9I7vw2FCLLUbWA44E8q_7ns__dlRrbf18/edit#)
+
 ### How to Play
 
 ![screenshot](assets/readme/controls.png)

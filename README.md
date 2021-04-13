@@ -62,7 +62,7 @@ This project was built using the technologies below.
 <!-- Live Demo -->
 ## Deployment (GitHub-Pages)
 ##
-* Live Demo Link --> App Deployed with GitHub-Pages: [Main Warrior]()
+* Live Demo Link --> App Deployed with GitHub-Pages: [Main Warrior](https://t-yanick.github.io/rpg-capstone/)
 
 ## Screenshots
 ![screenshot-1](assets/readme/screenshot1.png)

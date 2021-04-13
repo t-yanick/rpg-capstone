@@ -2,17 +2,17 @@
 /* eslint-disable import/extensions */
 
 import Phaser from 'phaser';
-import GameScene from './Scenes/GameScene';
-import BootScene from './Scenes/BootScene';
-import PreloaderScene from './Scenes/PreloaderScene';
-import UiScene from './Scenes/UiScene';
-import TitleScene from './Scenes/TitleScene';
-import OptionsScene from './Scenes/OptionsScene';
-import CreditsScene from './Scenes/CreditsScene';
-import GuideScene from './Scenes/GuideScene';
-import GameOver from './Scenes/GameOverScene';
+import GameScene from './scenes/GameScene';
+import BootScene from './scenes/BootScene';
+import PreloaderScene from './scenes/PreloaderScene';
+import UiScene from './scenes/UiScene';
+import TitleScene from './scenes/TitleScene';
+import OptionsScene from './scenes/OptionsScene';
+import CreditsScene from './scenes/CreditsScene';
+import GuideScene from './scenes/GuideScene';
+import GameOver from './scenes/GameOverScene';
 import Model from './Classes/Model';
-import ScoreScene from './Scenes/ScoreScene';
+import ScoreScene from './scenes/ScoreScene';
 import config from './Config/config';
 
 class Game extends Phaser.Game {

@@ -22,7 +22,7 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-  * [Walkthrough Video and Deployment (GitHub-Pages)](#walkthrough-video-and-deployment-(gitHub-pages))
+  * [Deployment (GitHub-Pages)](#deployment-(gitHub-pages))
 * [Usage](#usage)
 * [Contributors](#contributors)
 * [Acknowledgements](#acknowledgements)

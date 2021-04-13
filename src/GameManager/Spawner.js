@@ -1,3 +1,5 @@
+/* eslint-disable arrow-parens */
+
 import ChestModel from './ChestModel';
 import MonsterModel from './MonsterModel';
 import { SpawnerType, randomNumber } from './utils';

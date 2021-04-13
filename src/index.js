@@ -1,3 +1,6 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+
 import Phaser from 'phaser';
 import GameScene from './Scenes/GameScene';
 import BootScene from './Scenes/BootScene';
